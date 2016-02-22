@@ -1,0 +1,52 @@
+#mainDiv{
+    height: 927px;
+    width: 450px;
+    background: #D5D6D8;
+    float: left;
+    position: static;
+}
+#greyText{
+    color: grey;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 10px;
+    text-align: center;
+}
+#starWarsLogo{
+    float: right;
+    margin-right: 152.5px;
+}
+#starWarsP{
+    margin-bottom: 0px;
+}
+#identities{
+    float: right;
+    border-color: red;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-style: solid;
+    padding-top: 0px;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 152.5px;
+    margin-bottom: 0px;
+    color: #444444;
+}
+#theExhibition{
+    color: #444444;
+    font-family: verdana;
+    font-weight: bold;
+    margin-top: 5px;
+    float: right;
+    margin-right: 152.5px;
+}
+#logos{
+    float: right;
+    margin-right: 160px;
+    margin-top: 25px;
+}
