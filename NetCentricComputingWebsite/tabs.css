@@ -1,0 +1,52 @@
+body {
+	font-size: 14px; /* Default font and size for page                */
+	font-family: Arial;
+	font-weight: bold;
+	background-color: #000000;
+}
+ul#tabs {
+	list-style-type: none; /* No bullets                                    */
+	margin: 20px 0 0 0; /* Positive top margin                           */
+	padding: 0 0 0.3em 0; /* Bottom padding on tabs to make                */
+	/* them adjacent to the content                  */
+}
+ul#tabs li {
+	display: inline; /*displays elements in-line horizontally         */
+	padding: 12px; /*sets padding to 12 pixels everywhere           */
+}
+
+ul#tabs li a {
+	color: #FB4E12; /*sets the text color to a dark grey              */
+	background-color: #000000; /*sets the background color to a light grey       */
+	border: 5px solid #FB4E12; /*sets the border to a solid light grey           */
+	border-bottom: none; /*removes the bottom border                       */
+	border-top-left-radius: 10px; /*sets the top-left corner to round               */
+	border-top-right-radius: 10px; /*sets the top-right corner to round              */
+	padding: 0.3em 2em 0.3em 2em; /*sets the padding to the fractional width of "m" */
+	text-decoration: none; /*removes all text decoration                     */
+}
+
+ul#tabs li a:hover {
+	background-color: #FB4E12; /*sets background color to a light grey           */
+	color: #000000;
+	border-color: #000000;
+}
+
+ul#tabs li a.selected {
+	color: #FB4E12; /*sets the text color to black                    */
+	border-color: #FB4E12;
+	background-color: #000000; /*sets the text to bold                           */
+	padding: 0.7em 0.3em 0.38em 0.3em; /*sets the padding to the fractional width of "m" */
+}
+
+div.tabContent {
+	border: 5px solid #FB4E12; /*sets the border to a solid light grey           */
+	padding: 0.5em; /*sets the padding to the fractional width of "m" */
+	border-radius: 10px;
+	background-color: #000000;
+	color: #FB4E12;
+}
+
+div.tabContent.hide {
+	display: none; /*hides the content initially                      */
+}
