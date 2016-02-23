@@ -21,7 +21,7 @@ function initTabs() {
     for (var id in tabLinks) {
         tabLinks[id].onclick = showTab;
         tabLinks[id].onfocus = function () {
-            this.blur()
+            this.blur();
         };
         if (i == 0)
             tabLinks[id].className = 'selected';
