@@ -1,0 +1,97 @@
+body{
+	color: #FFFFFF;
+	background-color: #000000;
+}
+
+button{
+	color: #FFFFFF;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14px;
+	height: 25px;
+	width: 150px;
+}
+
+#win{
+	display: none;
+}
+
+#button0{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button1{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button2{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button3{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button4{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button5{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button6{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button7{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button8{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button9{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button10{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button11{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button12{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button13{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button14{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
+
+#button15{
+	background-color: #FB4E12;
+	border-color: #FB4E12;
+}
