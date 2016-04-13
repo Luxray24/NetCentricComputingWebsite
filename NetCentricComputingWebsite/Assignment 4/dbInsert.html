@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Database Insert</title>
+		<link 	rel="stylesheet"
+		type="text/css"
+		href="dbInsert.css">
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="dbInsert.js" type="text/javascript"></script>
+	</head>
+	<body onload="onLoad()">
+		<form name="dbInsert">
+			Classification:
+			<select id="Classifications" name="Classifications"></select>
+			<br>
+			Element:
+			<input type="text" id="Element" name="Element">
+			<br>
+			Atomic Mass:
+			<input type="text" id="AtomicMass" name="Atomic Mass">
+			<br>
+			<button type="button" onclick="insertElement()">
+				Insert
+			</button>
+			<br>
+
+			<p id="results"></p>
+			<p id="elements"></p>
+			<button type="button" onclick="showElements()">
+				Show Elements
+			</button>
+		</form>
+	</body>
+</html>
