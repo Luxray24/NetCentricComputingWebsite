@@ -10,13 +10,11 @@ function sanitize($str, $quotes = ENT_NOQUOTES) {
 }
 
 function getElements() {
-    alert("In getElements()");
     $dbConn = mysqli_connect(server(), username(), password(), db());
 
     $query = "SELECT * FROM Elements";
     $result = $dbConn->query($query);
     if ($dbConn->connect_error) {
-        alert("connect_error");
         $return->connect_error = "Connection failed: " . $dbConn->connect_error;
         $return->success = false;
         return json_encode($return);
@@ -27,33 +25,27 @@ function getElements() {
     if ($result) {
         while ($row = $result->fetch_array()) {
             $allColumns = array();
-            for ($i = 0; $i < 4; $i++) {
+            for ($i = 0; $i < 5; $i++) {
                 array_push($allColumns, $row[$i]);
             }
             array_push($elements, $allColumns);
         }
     }
 
-    $return = new StdClass();
+    $return = new stdClass();
     $return->success = true;
     $return->elements = $elements;
     $return->querystring = $query;
-    $return->credentials = username() .
-            password() .
-            db() .
-            " on " .
-            server();
     return json_encode($return);
 }
 
 function getClassifications() {
-    echo "<script type='text/javascript'>alert('In getClassifications() PHP');</script>";
+
     $dbConn = mysqli_connect(server(), username(), password(), db());
 
     $query = "SELECT * FROM Classifications";
     $result = $dbConn->query($query);
     if ($dbConn->connect_error) {
-        alert("connect_error");
         $return->connect_error = "Connection failed: " . $dbConn->connect_error;
         $return->success = false;
         return json_encode($return);
@@ -64,26 +56,25 @@ function getClassifications() {
     if ($result) {
         while ($row = $result->fetch_array()) {
             $allColumns = array();
-            for ($i = 0; $i < 4; $i++) {
+            for ($i = 0; $i < 2; $i++) {
                 array_push($allColumns, $row[$i]);
             }
             array_push($classifications, $allColumns);
         }
     }
 
-    $return = new StdClass();
+    $return = new stdClass();
     $return->success = true;
     $return->classifications = $classifications;
     $return->querystring = $query;
-    $return->credentials = username() .
-            password() .
-            db() .
-            " on " .
-            server();
     return json_encode($return);
 }
 
 function insertElement() {
+    if (isset($_POST['AtomicNumber'])) {
+        $AtomicNumber = json_decode(sanitize($_POST['AtomicNumber']));
+    }
+
     if (isset($_POST['ClassificationID'])) {
         $ClassificationID = json_decode(sanitize($_POST['ClassificationID']));
     }
@@ -102,8 +93,9 @@ function insertElement() {
         die("Connection failed: " . $dbConn->connect_error);
     }
 
-    $query = "INSERT INTO Elements ( ClassificationID, Element, AtomicMass ) " .
+    $query = "INSERT INTO Elements ( AtomicNumber, ClassificationID, Element, AtomicMass ) " .
             "VALUES ( " .
+            "" . $AtomicNumber . ", " .
             "" . $ClassificationID . ", " .
             "'" . $Element . "', " .
             "" . $AtomicMass . " );";

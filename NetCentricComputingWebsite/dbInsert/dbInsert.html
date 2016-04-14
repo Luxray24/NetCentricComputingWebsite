@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Database Insert</title>
@@ -9,25 +10,29 @@
     </head>
     <body onload="onLoad()">
         <form name="dbInsert">
+            Atomic Number:
+            <input type="text" id="AtomicNumber" name="AtomicNumber">
+            <br>
+            <br>
             Classification:
             <select id="Classifications" name="Classifications"></select>
+            <br>
             <br>
             Element:
             <input type="text" id="Element" name="Element">
             <br>
+            <br>
             Atomic Mass:
             <input type="text" id="AtomicMass" name="Atomic Mass">
+            <br>
             <br>
             <button type="button" onclick="insertElement()">
                 Insert
             </button>
             <br>
+            <br>
 
             <p id="results"></p>
-            <p id="elements"></p>
-            <button type="button" onclick="showElements()">
-                Show Elements
-            </button>
         </form>
     </body>
 </html>
