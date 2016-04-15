@@ -17,6 +17,8 @@ function insertElement() {
     ajax.done(insertElementCallback);
     ajax.fail(function () {
         alert("Failure");
+        getElements(false);
+        getClassifications(false);
     });
 }
 
@@ -40,6 +42,8 @@ function insertElementCallback(response_in) {
     if (!response['success']) {
         $("#results").html("");
         alert("Insert failed on query:" + '\n' + response['querystring']);
+        getElements(false);
+        getClassifications(false);
     } else {
         $("results").html(
                 response['querystring'] + '<br>' +
