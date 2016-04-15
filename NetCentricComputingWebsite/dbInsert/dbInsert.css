@@ -39,15 +39,8 @@ button {
 }
 
 
-#Classifications {   
-    background-position: 22px 3px;                
-    background-size: 13px 13px; 
-    width: 200px;
-    height: 35px;
-    margin-left: 4px;
-    position: absolute;
-    cursor: pointer;
-    font-family: Arial;
+select {
+	font-family: Arial;
     font-size: 18.67px;
     font-weight: bold;
     color: #000710;
