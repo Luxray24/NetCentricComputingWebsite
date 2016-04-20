@@ -1,48 +1,150 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Database Insert</title>
-        <link 	rel="stylesheet"
-               type="text/css"
-               href="dbInsert.css">
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="dbInsert.js" type="text/javascript"></script>
-        <script src="ColorChange.js" type="text/javascript"></script>
-    </head>
-    <body onload="onLoad()">
-        <form name="dbInsert">
-            Atomic Number:
-            <input type="text" id="AtomicNumber" name="AtomicNumber">
-            <br>
-            <br>
-            Classification:
-            <select id="Classifications" name="Classifications"></select>
-            <br>
-            <br>
-            Element:
-            <input type="text" id="Element" name="Element">
-            <br>
-            <br>
-            Atomic Mass:
-            <input type="text" id="AtomicMass" name="Atomic Mass">
-            <br>
-            <br>
-            <button type="button" onclick="insertElement()">
-                Insert
-            </button>
-            <br>
-            <br>
-
-            <p id="results"></p>
-        </form>
-        <div>
-        	Color 1: <input type="text" id="Color1" name="Color 1" value="000710">
-        	<br>
-        	<br>
-        	Color 2: <input type="text" id="Color2" name= "Color 2" value="FB4E12">
-        	<br>
-        	<br>
-        	<button type="button" onclick="changeColorScheme()">Change Colors</button>
-        </div>
-    </body>
+	<head>
+		<title>Database Insert</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="dbInsert.js" type="text/javascript"></script>
+		<script src="ColorChange.js" type="text/javascript"></script>
+	</head>
+	<body onload="onLoad()">
+		<form id="dbInsert" name="dbInsert">
+			Atomic Number:
+			<input type="text" id="AtomicNumber" name="AtomicNumber">
+			<br>
+			<br>
+			Classification:
+			<select id="Classifications" name="Classifications"></select>
+			<br>
+			<br>
+			Element:
+			<input type="text" id="Element" name="Element">
+			<br>
+			<br>
+			Atomic Mass:
+			<input type="text" id="AtomicMass" name="Atomic Mass">
+			<br>
+			<br>
+			<button type="button" onclick="insertElement()">
+				Insert
+			</button>
+			&#09;
+			<button type="button" onclick="styles()">Styles</button>
+			<p id="results"></p>
+		</form>
+		<div id="StyleDiv">
+			<div>
+				<div>
+					Color 1:
+					<input type="text" id="Color1" name="Color 1" value="">
+					<p>
+						The above box styles the body background color and the text color of all elements.
+						<br>
+						!!!MUST BE IN HEX!  DO NOT PUT THE #!!!
+					</p>
+				</div>
+				<div>
+					Color 2:
+					<input type="text" id="Color2" name= "Color 2" value="">
+					<p>
+						The above box styles the body text color and the background color of all elements.
+						<br>
+						!!!MUST BE IN HEX!  DO NOT PUT THE #!!!
+					</p>
+				</div>
+				<div>
+					Border Color:
+					<input type="text" id="BorderColor" name="Border Color" value="">
+					<p>
+						The above box styles the border color of all elements.
+						<br>
+						!!!MUST BE IN HEX!  DO NOT PUT THE #!!!
+					</p>
+				</div>
+				<div>
+					Border Style:
+					<select id="BorderStyle" name="Border Style">
+						<option value"double">Double</option>
+						<option value"none">None</option>
+						<option value"dotted">Dotted</option>
+						<option value"dashed">Dashed</option>
+						<option value"solid">Solid</option>
+						<option value"groove">Groove</option>
+						<option value"ridge">Ridge</option>
+						<option value"inset">Inset</option>
+						<option value"outset">Outset</option>
+					</select>
+					<p>
+						The above box changes the style of the borders on the page.
+					</p>
+				</div>
+				<div>
+					Border Radius:
+					&#09;
+					Top Left:
+					<input type="text" id="BorderTopLeftRadius" name="Border Top Left Radius" value="">
+					<br>
+					Top Right:
+					<input type="text" id="BorderTopRightRadius" name="Border Top Right Radius" value="">
+					<br>
+					Bottom Left:
+					<input type="text" id="BorderBottomLeftRadius" name="Border Bottom Left Radius" value="">
+					<br>
+					Bottom Right:
+					<input type="text" id="BorderBottomRightRadius" name="Border Bottom Right Radius" value="">
+					<p>
+						The above boxes style the border radius of each corner of the borders on the page.
+						<br>
+						!!!MUST BE A NUMERICAL VALUE!!!
+					</p>
+				</div>
+				<div>
+					Border Width:
+					<input type="text" id="BorderWidth" name="Border Width" value="">
+					<p>
+						The above box changes the font of the text on the page.
+						<br>
+						!!!MUST BE A NUMERICAL VALUE!!!
+					</p>
+				</div>
+				<div>
+					Font:
+					<input type="text" id="Font" name="Font" value="">
+					<p>
+						The above box changes the font of the text on the page.
+						<br>
+						!!!MUST BE A VALID FONT NAME!!!
+						&#8667;<a target="_blank" href="http://www.cssfontstack.com/">List of Fonts</a>&#8666;
+					</p>
+				</div>
+				<div>
+					Font Size:
+					<input type="text" id="FontSize" name="Font Size" value="">
+					<p>
+						The above box changes the font size of the text on the page.
+						<br>
+						!!!MUST BE A NUMERICAL VALUE!!!
+					</p>
+				</div>
+				<div>
+					Font Weight:
+					<select id="FontWeight" name="Font Weight">
+						<option value"bold">Bold</option>
+						<option value"lighter">Lighter</option>
+						<option value"normal">Normal</option>
+						<option value"bolder">Bolder</option>
+					</select>
+					<p>
+						The above box changes the font weight of the text on the page.
+					</p>
+				</div>
+			</div>
+			<button type="button" onclick="initChangeStyles()">
+				Change Styles
+			</button>
+			&#09;
+			<button type="button" onclick="insertData()">
+				Insert Data
+			</button>
+		</div>
+	</body>
 </html>
