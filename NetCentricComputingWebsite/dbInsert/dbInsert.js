@@ -1,8 +1,26 @@
 var classifications;
 var elements;
+var color1;
+var color2;
+
+function changeColorScheme() {
+    color1 = "#" + $('#Color1').val();
+    color2 = "#" + $('#Color2').val();
+
+    $(document).ready(changeColor(color1, color2));
+}
+
+function changeColor(color1, color2) {
+    $("body").css({"background-color" : color1, "color" : color2});
+    $("input").css({"background-color" : color2, "color" : color1, "border-color" : color1});
+    $("select").css({"background-color" : color2, "color" : color1, "border-color" : color1});
+    $("option").css({"background-color" : color2, "color" : color1, "border-color" : color1});
+    $("button").css({"background-color" : color2, "color" : color1, "border-color" : color1});
+}
 
 function onLoad() {
     //alert("In onLoad()");
+    changeColorScheme();
     getClassifications(false);
     getElements(false);
 }
@@ -17,8 +35,6 @@ function insertElement() {
     ajax.done(insertElementCallback);
     ajax.fail(function () {
         alert("Failure");
-        getElements(false);
-        getClassifications(false);
     });
 }
 
