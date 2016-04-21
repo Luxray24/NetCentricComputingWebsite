@@ -169,9 +169,9 @@ function onLoad() {
 	$('#StyleDiv').css({
 		"display" : "none"
 	});
-	initialStyles();
 	getClassifications(false);
 	getElements(false);
+	initialStyles();
 }
 
 function styles() {
